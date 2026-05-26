@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200">
+    <title>Swarnim Koratkar | Game Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="cyber-grid-canvas"></div>
+    
+    <header class="navbar">
+        <div class="logo neon-text-cyan">SK GAMEDEVS</div>
+        <nav class="nav-links">
+            <a href="#about">ABOUT</a>           
+            <a href="#projects">PROJECTS</a>
+            <a href="#skills">SKILLS</a>            
+            <a href="#achievements">ACHIEVEMENTS</a>
+            <a href="#links">CONTACT</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="neon-text-cyan">SWARNIM KORATKAR</h1>
+            <p class="subtitle neon-text-orange">GAME DEVELOPER & DESIGNER</p>
+            <p class="tagline">I build visually immersive gaming experiences and addictive core loops—games that are actually fun to play.</p>
+            <a href="#projects" class="neon-btn">VIEW PROJECTS</a>
+        </div>
+    </section>
+
+    <section id="about" class="projects-section" style="border-top: 1px solid rgba(255, 217, 102, 0.15); margin-bottom: 100px;">
+        <h2 class="neon-text-purple">👤 CHARACTER FILE</h2>
+        
+        <div class="about-container">
+            <div class="about-bio">
+                <h3 class="neon-tag-cyan">➔ STATUS REPORT</h3>
+                <p>
+                    Hey! My name is <strong>Swarnim Koratkar</strong>. I am a passionate game developer based in Pune, focused on building interactive virtual worlds. I believe the best way to master game development is through execution—learning advanced system architecture and coding patterns side-by-side while actively shipping projects.
+                </p>
+                <p style="margin-top: 15px;">
+                    As an extrovert, I thrive on communication, team collaboration, and building meaningful professional contacts within the tech and gaming communities.
+                </p>
+            </div>
+
+            <div class="about-stats">
+                <div class="stat-box">
+                    <span class="stat-label neon-tag-orange">QUALIFICATIONS</span>
+                    <p class="stat-value">B.Sc. Computer Science (2nd Year)</p>
+                    <p class="stat-sub">MIT WPU, Pune</p>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-label neon-tag-cyan">VIRTUAL GAMES</span>
+                    <p class="stat-value">Hogwarts Legacy, Alan Wake 2, GTA V, GTA San Andreas, BGMI</p>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-label" style="color: var(--neon-magenta); text-shadow: 0 0 5px var(--neon-magenta);">ON GROUND GAMES</span>
+                    <p class="stat-value">Volleyball & Football</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section" style="border-top: 1px solid rgba(255, 217, 102, 0.15); margin-bottom: 100px;">
+        <h2 class="neon-text-purple">🚀 COMPLETED PROJECTS</h2>
+        <div class="project-grid">
+            
+            <div class="neon-card pirate-theme" onclick="openArcadePanel('pirate')" style="cursor: pointer;">
+                <div class="card-image-box">
+                     <img src="./pirate-cover.png" alt="Pirate's Gamble Gameplay Preview" class="project-card-img">
+                </div>
+                <div class="card-content">
+                    <h3>Pirate's Gamble</h3>
+                    <p class="engine-tag neon-tag-orange">UNITY / C# / NETCODE MULTIPLAYER / ADS MONETIZATION</p>
+                    <p>
+                        A high-stakes 3D strategy card game full of backstabbing, tactical betrayals, and chasing gold. Out-gamble and out-maneuver rival captains to secure the ultimate hoard.
+                    </p>
+                    <div style="margin-top: 15px; font-size: 0.85rem; color: var(--sunset-orange); font-weight: bold; letter-spacing: 1px; text-shadow: 0 0 8px rgba(255, 217, 102, 0.3);">
+                        ✦ FEATURED: ONLINE MULTIPLAYER & OFFLINE BOT MODE
+                    </div>
+                </div>
+            </div>
+
+            <div class="neon-card cavern-theme" onclick="openArcadePanel('caverns')" style="cursor: pointer;">
+                <div class="card-image-box">
+                    <img src="./caverns-cover.jpeg" alt="CAVERNS Gameplay Preview" class="project-card-img">
+                </div> 
+                <div class="card-content">
+                    <h3>CAVERNS</h3>
+                    <p class="engine-tag neon-tag-cyan">UNITY / C# / ADS MONETIZATION</p>
+                    <p>
+                        An intense, atmospheric neon endless runner driven by a pulsing synthwave soundtrack. Engineered to deliver a highly synchronized, visually striking audio-visual experience.
+                    </p>
+                    <div style="margin-top: 15px; font-size: 0.85rem; color: var(--neon-cyan); font-weight: bold; letter-spacing: 1px; text-shadow: 0 0 8px rgba(0, 243, 255, 0.3);">
+                        ✦ FEATURED: SYNCHRONIZED AUDIO & DYNAMIC FX
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills" class="projects-section" style="border-top: 1px solid rgba(157, 78, 221, 0.15);">
+        <h2 class="neon-text-purple">⚔️ SKILLS</h2>
+        <div class="skills-wrapper">
+            <div class="skills-category">
+                <h3 class="category-title neon-tag-cyan">SYSTEMS & PROGRAMMING</h3>
+                <div class="badge-grid">
+                    <div class="skill-badge cyan-glow">Unity <span class="level">Intermediate</span></div>
+                    <div class="skill-badge cyan-glow">C# <span class="level">Intermediate</span></div>
+                    <div class="skill-badge cyan-glow">C <span class="level">Intermediate</span></div>
+                    <div class="skill-badge cyan-glow">SQL / DBMS <span class="level">Beginner</span></div>
+                    <div class="skill-badge cyan-glow">Optimization</div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 class="category-title neon-tag-orange">GAME DEV & DESIGN</h3>
+                <div class="badge-grid">
+                    <div class="skill-badge orange-glow">Game Design</div>
+                    <div class="skill-badge orange-glow">Level Design</div>
+                    <div class="skill-badge orange-glow">UI / UX Design</div>
+                    <div class="skill-badge orange-glow">Game Programming <span class="level">Intermediate</span></div>
+                    <div class="skill-badge orange-glow">Blender <span class="level">Beginner</span></div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3 class="category-title neon-tag-magenta">PRODUCTION & EXECUTION</h3>
+                <div class="badge-grid">
+                    <div class="skill-badge magenta-glow">Project Management</div>
+                    <div class="skill-badge magenta-glow">Meeting Deadlines</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="projects-section" style="border-top: 1px solid rgba(255, 217, 102, 0.15);">
+        <h2 class="neon-text-purple">🏆 ACCOLADES & CERTIFICATES</h2>
+        <div class="achievements-container">
+            <div class="achievement-card">
+                <div class="achievement-img-wrapper">
+                    <img src="./edge-cert.jpeg" id="certImg" alt="E.D.G.E 2nd Place Certificate" class="cert-img" style="cursor: pointer;">
+                    <div class="rank-badge">2ND PLACE</div>
+                </div>
+                <div class="achievement-content">
+                    <h3>E.D.G.E Game Competition</h3>
+                    <p class="org-tag">MIT WPU / HACKATHON ARENA</p>
+                    <p class="achievement-desc">
+                        Secured Podiums out of competitive developer teams by conceptualizing, designing, and programming a functional game build within strict hackathon timelines.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="links" class="projects-section" style="border-top: 1px solid rgba(0, 243, 255, 0.15);">
+        <h2 class="neon-text-purple">🌐 CONTACT HUB</h2>
+        <div class="links-container">
+            <a href="mailto:swarnimkoratkar@gmail.com" class="portal-link orange-glow-link">
+                <div class="portal-icon">✉</div>
+                <div class="portal-info">
+                    <span class="portal-title">EMAIL COMMS</span>
+                    <span class="portal-user">swarnimkoratkar@gmail.com</span>
+                </div>
+            </a>
+            <a href="https://instagram.com/swarnimkoratkar" target="_blank" class="portal-link magenta-glow-link">
+                <div class="portal-icon">📸</div>
+                <div class="portal-info">
+                    <span class="portal-title">INSTAGRAM</span>
+                    <span class="portal-user">@swarnimkoratkar</span>
+                </div>
+            </a>
+            <a href="https://github.com" target="_blank" class="portal-link cyan-glow-link">
+                <div class="portal-icon">💻</div>
+                <div class="portal-info">
+                    <span class="portal-title">CODE MATRIX</span>
+                    <span class="portal-user">GITHUB PROFILE</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <div id="arcadePanel" class="arcade-overlay" onclick="closeArcadePanel(event)">
+        <div class="arcade-cabinet">
+            <button class="arcade-close" onclick="document.getElementById('arcadePanel').classList.remove('active')">✕ CLOSE</button>
+            <div class="arcade-header">
+                <div>
+                    <h2 id="arcadeTitle">GAME TITLE</h2>
+                    <p id="arcadeEngine" class="engine-tag">ENGINE / SPEC</p>
+                </div>
+                <button class="arcade-play-btn" disabled>LAUNCH WEB PLAY <span class="btn-sub">COMING SOON</span></button>
+            </div>
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+            <div class="arcade-body">
+                <h4 class="neon-tag-cyan">➔ MISSION INTELLIGENCE</h4>
+                <p id="arcadeDesc">Extended gameplay metrics go here.</p>
+            </div>
+            <div class="arcade-gallery-section">
+                <h4 class="neon-tag-orange">➔ VISUAL DEPLOYMENT FILES (CLICK TO ZOOM)</h4>
+                <div class="playstore-gallery"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="galleryLightbox" class="cert-lightbox" onclick="closeGalleryLightbox(event)">
+        <button class="nav-arrow prev-arrow" onclick="changeSlide(-1)">◀ PREV</button>
+        <div id="galleryLightboxContent"></div>
+        <button class="nav-arrow next-arrow" onclick="changeSlide(1)">NEXT ▶</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
