@@ -6,8 +6,9 @@
     --base-text: #e2e8f0;     /* Soft Gray Text */
     --neon-cyan: #00f3ff;     /* CAVERNS Blue */
     --neon-purple: #9d4edd;   /* SKILLS Purple */
-    --neon-magenta: #ff007f;  /* Global Accents */
-    --sunset-orange: #ffd966; /* PIRATE'S GAMBLE Gold-Orange */
+    --neon-magenta: #ff007f;  /* CHAMELEON Magenta */
+    --sunset-orange: #ffd966; /* PIRATE'S GAMBLE Gold-Sunset */
+    --neon-red: #ff1a1a;      /* BHOLA Blood Red */
 }
 
 * {
@@ -20,7 +21,7 @@ body {
     background-color: var(--deep-bg);
     color: var(--base-text);
     font-family: 'Rajdhani', sans-serif;
-    overflow-x: hidden; /* Prevent unwanted side-scrolling on mobile devices */
+    overflow-x: hidden;
 }
 
 html {
@@ -51,10 +52,10 @@ h1, h2, h3, .neon-btn {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 700;
     font-family: 'Orbitron', sans-serif;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 .nav-links {
@@ -118,7 +119,7 @@ h1, h2, h3, .neon-btn {
 }
 
 .neon-text-orange {
-   color: var(--sunset-orange);
+    color: var(--sunset-orange);
     text-shadow: 0 0 5px var(--sunset-orange), 0 0 1.5px var(--sunset-orange);
 }
 
@@ -129,6 +130,17 @@ h1, h2, h3, .neon-btn {
     margin-bottom: 50px;
     font-size: 2.5rem;
 }
+
+.neon-text-red {
+    color: var(--neon-red);
+    text-shadow: 0 0 5px var(--neon-red), 0 0 1.5px var(--neon-red);
+}
+
+.neon-tag-orange { color: var(--sunset-orange); text-shadow: 0 0 8px rgba(255, 217, 102, 0.4); }
+.neon-tag-cyan { color: var(--neon-cyan); text-shadow: 0 0 8px rgba(0, 243, 255, 0.4); }
+.neon-tag-magenta { color: var(--neon-magenta); text-shadow: 0 0 8px rgba(255, 0, 127, 0.4); }
+.neon-tag-purple { color: var(--neon-purple); text-shadow: 0 0 8px rgba(157, 78, 221, 0.4); }
+.neon-tag-red { color: var(--neon-red); text-shadow: 0 0 8px rgba(255, 26, 26, 0.5); }
 
 .neon-btn {
     display: inline-block;
@@ -154,25 +166,48 @@ h1, h2, h3, .neon-btn {
    ========================================= */
 .card-image-box {
     width: 100%;
-    height: 200px;
+    height: auto;
     overflow: hidden;
     position: relative;
     background: rgba(19, 21, 32, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 0;
 }
 
+/* Custom Aspect Ratios */
+.ratio-pirates { aspect-ratio: 1002 / 366; }
+.ratio-caverns { aspect-ratio: 1920 / 955; }
+.ratio-meta { aspect-ratio: 512 / 512; max-height: 300px; }
+.ratio-bhola { aspect-ratio: 1917 / 943; }
+
 .project-card-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     transition: transform 0.4s cubic-bezier(0.1, 0.8, 0.2, 1);
 }
 
 .neon-card:hover .project-card-img {
     transform: scale(1.04);
+}
+
+.status-overlay-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 26, 26, 0.85);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--neon-red);
+    box-shadow: 0 0 10px rgba(255, 26, 26, 0.6);
+    letter-spacing: 1px;
 }
 
 .projects-section {
@@ -183,7 +218,7 @@ h1, h2, h3, .neon-btn {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Keep row balance on desktop layout */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 40px;
 }
 
@@ -216,11 +251,8 @@ h1, h2, h3, .neon-btn {
     line-height: 1.6;
 }
 
+/* Card Themes */
 .pirate-theme { border: 1px solid rgba(255, 217, 102, 0.25); }
-.neon-tag-orange {
-    color: var(--sunset-orange);
-    text-shadow: 0 0 8px rgba(255, 217, 102, 0.4);
-}
 .pirate-theme:hover {
     transform: translateY(-5px);
     border-color: var(--sunset-orange);
@@ -228,18 +260,24 @@ h1, h2, h3, .neon-btn {
 }
 
 .cavern-theme { border: 1px solid rgba(0, 243, 255, 0.25); }
-.neon-tag-cyan {
-    color: var(--neon-cyan);
-    text-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
-}
-.neon-tag-magenta {
-    color: var(--neon-magenta);
-    text-shadow: 0 0 8px rgba(255, 0, 127, 0.4);
-}
 .cavern-theme:hover {
     transform: translateY(-5px);
     border-color: var(--neon-cyan);
     box-shadow: 0 0 22px rgba(0, 243, 255, 0.5);
+}
+
+.chameleon-theme { border: 1px solid rgba(255, 0, 127, 0.25); }
+.chameleon-theme:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-magenta);
+    box-shadow: 0 0 22px rgba(255, 0, 127, 0.5);
+}
+
+.bhola-theme { border: 1px solid rgba(255, 26, 26, 0.3); }
+.bhola-theme:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-red);
+    box-shadow: 0 0 25px rgba(255, 26, 26, 0.55);
 }
 
 /* =========================================
@@ -297,32 +335,16 @@ h1, h2, h3, .neon-btn {
 }
 
 .cyan-glow { border: 1px solid rgba(0, 243, 255, 0.2); }
-.cyan-glow:hover {
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
-    transform: translateY(-2px);
-}
+.cyan-glow:hover { border-color: var(--neon-cyan); box-shadow: 0 0 10px rgba(0, 243, 255, 0.4); transform: translateY(-2px); }
 
 .orange-glow { border: 1px solid rgba(255, 217, 102, 0.2); }
-.orange-glow:hover {
-    border-color: var(--sunset-orange);
-    box-shadow: 0 0 10px rgba(255, 217, 102, 0.4);
-    transform: translateY(-2px);
-}
+.orange-glow:hover { border-color: var(--sunset-orange); box-shadow: 0 0 10px rgba(255, 217, 102, 0.4); transform: translateY(-2px); }
 
 .purple-glow { border: 1px solid rgba(157, 78, 221, 0.2); }
-.purple-glow:hover {
-    border-color: var(--neon-purple);
-    box-shadow: 0 0 10px rgba(157, 78, 221, 0.4);
-    transform: translateY(-2px);
-}
+.purple-glow:hover { border-color: var(--neon-purple); box-shadow: 0 0 10px rgba(157, 78, 221, 0.4); transform: translateY(-2px); }
 
 .magenta-glow { border: 1px solid rgba(255, 0, 127, 0.2); }
-.magenta-glow:hover {
-    border-color: var(--neon-magenta);
-    box-shadow: 0 0 10px rgba(255, 0, 127, 0.4);
-    transform: translateY(-2px);
-}
+.magenta-glow:hover { border-color: var(--neon-magenta); box-shadow: 0 0 10px rgba(255, 0, 127, 0.4); transform: translateY(-2px); }
 
 /* =========================================
    8. CHARACTER FILE (ABOUT) LAYOUT
@@ -439,25 +461,13 @@ h1, h2, h3, .neon-btn {
 }
 
 .orange-glow-link .portal-title { color: var(--sunset-orange); }
-.orange-glow-link:hover {
-    border-color: var(--sunset-orange);
-    box-shadow: 0 0 15px rgba(255, 217, 102, 0.4);
-    transform: translateY(-3px);
-}
+.orange-glow-link:hover { border-color: var(--sunset-orange); box-shadow: 0 0 15px rgba(255, 217, 102, 0.4); transform: translateY(-3px); }
 
 .magenta-glow-link .portal-title { color: var(--neon-magenta); }
-.magenta-glow-link:hover {
-    border-color: var(--neon-magenta);
-    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
-    transform: translateY(-3px);
-}
+.magenta-glow-link:hover { border-color: var(--neon-magenta); box-shadow: 0 0 15px rgba(255, 0, 127, 0.4); transform: translateY(-3px); }
 
 .cyan-glow-link .portal-title { color: var(--neon-cyan); }
-.cyan-glow-link:hover {
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
-    transform: translateY(-3px);
-}
+.cyan-glow-link:hover { border-color: var(--neon-cyan); box-shadow: 0 0 15px rgba(0, 243, 255, 0.4); transform: translateY(-3px); }
 
 /* =========================================
    10. ACHIEVEMENTS & ACCOLADES LAYOUT
@@ -558,18 +568,14 @@ h1, h2, h3, .neon-btn {
     transform: scale(1);
 }
 
-.pirate-lightbox-glow { 
-    border: 2px solid var(--sunset-orange); 
-    box-shadow: 0 0 40px rgba(255, 217, 102, 0.4); 
-}
-.caverns-lightbox-glow { 
-    border: 2px solid var(--neon-cyan); 
-    box-shadow: 0 0 40px rgba(0, 243, 255, 0.5); 
-}
+.pirate-lightbox-glow { border: 2px solid var(--sunset-orange); box-shadow: 0 0 40px rgba(255, 217, 102, 0.4); }
+.caverns-lightbox-glow { border: 2px solid var(--neon-cyan); box-shadow: 0 0 40px rgba(0, 243, 255, 0.5); }
+.chameleon-lightbox-glow { border: 2px solid var(--neon-magenta); box-shadow: 0 0 40px rgba(255, 0, 127, 0.5); }
+.bhola-lightbox-glow { border: 2px solid var(--neon-red); box-shadow: 0 0 40px rgba(255, 26, 26, 0.6); }
 
-/* =========================================
-   12. INTERACTIVE ARCADE POPUP ENGINE
-   ========================================= */
+/* ==========================================================================
+   12. DYNAMICALLY THEMED ARCADE MODAL POPUP
+   ========================================================================== */
 .arcade-overlay {
     position: fixed;
     top: 0;
@@ -588,20 +594,20 @@ h1, h2, h3, .neon-btn {
 }
 
 .arcade-overlay.active { opacity: 1; pointer-events: auto; }
+
 .arcade-cabinet {
     background: #131520;
-    border: 2px solid rgba(0, 243, 255, 0.3);
     width: 90%;
     max-width: 850px;
     border-radius: 12px;
     padding: 35px;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     position: relative;
     transform: translateY(20px);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .arcade-overlay.active .arcade-cabinet { transform: translateY(0); }
+
 .arcade-close {
     position: absolute;
     top: 20px;
@@ -614,27 +620,18 @@ h1, h2, h3, .neon-btn {
     font-size: 0.8rem;
     cursor: pointer;
     border-radius: 4px;
+    transition: all 0.25s ease;
 }
-.arcade-close:hover { color: #fff; border-color: var(--neon-magenta); text-shadow: 0 0 5px var(--neon-magenta); }
+
 .arcade-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-top: 15px; }
-#arcadeTitle { font-size: 2rem; color: #fff; }
+#arcadeTitle { font-size: 2rem; }
 
-.arcade-play-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px dashed rgba(255, 217, 102, 0.3);
-    color: var(--sunset-orange);
-    padding: 12px 24px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: not-allowed;
+.arcade-divider {
+    border: 0;
+    margin: 20px 0;
+    transition: border-color 0.3s ease;
 }
 
-.arcade-play-btn .btn-sub { font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; color: #64748b; margin-top: 2px; }
 .arcade-body h4, .arcade-gallery-section h4 { font-size: 0.9rem; margin-bottom: 10px; }
 #arcadeDesc { color: #94a3b8; line-height: 1.6; font-size: 1.05rem; }
 .arcade-gallery-section { margin-top: 30px; }
@@ -648,7 +645,6 @@ h1, h2, h3, .neon-btn {
     width: 280px;
     height: 160px;
     background: rgba(25, 27, 41, 0.75) !important; 
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -666,15 +662,188 @@ h1, h2, h3, .neon-btn {
 .media-placeholder:hover {
     background: rgba(30, 34, 53, 0.9) !important;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
+
+/* ---------------------------------------------
+   THEME 1: PIRATE'S GAMBLE (GOLDEN SUNSET)
+--------------------------------------------- */
+.theme-pirate {
+    border: 2px solid rgba(255, 217, 102, 0.45);
+    box-shadow: 0 0 45px rgba(255, 217, 102, 0.25);
+}
+.theme-pirate #arcadeTitle {
+    color: var(--sunset-orange);
+    text-shadow: 0 0 10px rgba(255, 217, 102, 0.6);
+}
+.theme-pirate .arcade-divider { border-top: 1px solid rgba(255, 217, 102, 0.25); }
+.theme-pirate #arcadeIntelTag, .theme-pirate #arcadeVisualTag {
+    color: var(--sunset-orange);
+    text-shadow: 0 0 8px rgba(255, 217, 102, 0.4);
+}
+.theme-pirate .media-placeholder {
+    border: 1px solid rgba(255, 217, 102, 0.25) !important;
+}
+.theme-pirate .media-placeholder:hover {
+    border-color: var(--sunset-orange) !important;
+    box-shadow: 0 0 18px rgba(255, 217, 102, 0.35);
+}
+.theme-pirate .arcade-close:hover {
+    color: var(--sunset-orange);
+    border-color: var(--sunset-orange);
+    text-shadow: 0 0 6px var(--sunset-orange);
+}
+
+/* ---------------------------------------------
+   THEME 2: CAVERNS (SYNTHWAVE NEON CYAN)
+--------------------------------------------- */
+.theme-caverns {
+    border: 2px solid rgba(0, 243, 255, 0.4);
+    box-shadow: 0 0 45px rgba(0, 243, 255, 0.25);
+}
+.theme-caverns #arcadeTitle {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.6);
+}
+.theme-caverns .arcade-divider { border-top: 1px solid rgba(0, 243, 255, 0.2); }
+.theme-caverns #arcadeIntelTag, .theme-caverns #arcadeVisualTag {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+}
+.theme-caverns .media-placeholder {
+    border: 1px solid rgba(0, 243, 255, 0.2) !important;
+}
+.theme-caverns .media-placeholder:hover {
+    border-color: var(--neon-cyan) !important;
+    box-shadow: 0 0 18px rgba(0, 243, 255, 0.35);
+}
+.theme-caverns .arcade-close:hover {
+    color: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+    text-shadow: 0 0 6px var(--neon-cyan);
+}
+
+/* ---------------------------------------------
+   THEME 3: META CHAMELEON (STEALTH MAGENTA)
+--------------------------------------------- */
+.theme-chameleon {
+    border: 2px solid rgba(255, 0, 127, 0.45);
+    box-shadow: 0 0 45px rgba(255, 0, 127, 0.28);
+}
+.theme-chameleon #arcadeTitle {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
+}
+.theme-chameleon .arcade-divider { border-top: 1px solid rgba(255, 0, 127, 0.25); }
+.theme-chameleon #arcadeIntelTag, .theme-chameleon #arcadeVisualTag {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 8px rgba(255, 0, 127, 0.4);
+}
+.theme-chameleon .media-placeholder {
+    border: 1px solid rgba(255, 0, 127, 0.25) !important;
+}
+.theme-chameleon .media-placeholder:hover {
+    border-color: var(--neon-magenta) !important;
+    box-shadow: 0 0 18px rgba(255, 0, 127, 0.35);
+}
+.theme-chameleon .arcade-close:hover {
+    color: var(--neon-magenta);
+    border-color: var(--neon-magenta);
+    text-shadow: 0 0 6px var(--neon-magenta);
+}
+
+/* ---------------------------------------------
+   THEME 4: REBIRTH OF BHOLA (PSYCHOLOGICAL RED)
+--------------------------------------------- */
+.theme-bhola {
+    border: 2px solid rgba(255, 26, 26, 0.45);
+    box-shadow: 0 0 50px rgba(255, 26, 26, 0.32);
+}
+.theme-bhola #arcadeTitle {
+    color: var(--neon-red);
+    text-shadow: 0 0 12px rgba(255, 26, 26, 0.7);
+}
+.theme-bhola .arcade-divider { border-top: 1px solid rgba(255, 26, 26, 0.25); }
+.theme-bhola #arcadeIntelTag, .theme-bhola #arcadeVisualTag {
+    color: var(--neon-red);
+    text-shadow: 0 0 8px rgba(255, 26, 26, 0.5);
+}
+.theme-bhola .media-placeholder {
+    border: 1px solid rgba(255, 26, 26, 0.25) !important;
+}
+.theme-bhola .media-placeholder:hover {
+    border-color: var(--neon-red) !important;
+    box-shadow: 0 0 18px rgba(255, 26, 26, 0.4);
+}
+.theme-bhola .arcade-close:hover {
+    color: var(--neon-red);
+    border-color: var(--neon-red);
+    text-shadow: 0 0 6px var(--neon-red);
+}
+
+/* Dynamic Action Buttons */
+.arcade-play-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 217, 102, 0.3);
+    color: var(--sunset-orange);
+    padding: 12px 24px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 6px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: not-allowed;
+    text-align: center;
+    text-decoration: none;
+}
+.arcade-play-btn .btn-sub { font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; color: #64748b; margin-top: 2px; }
+
+.arcade-playstore-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 0, 127, 0.12);
+    border: 2px solid var(--neon-magenta);
+    color: #fff;
+    padding: 12px 24px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.arcade-playstore-link:hover {
+    background: var(--neon-magenta);
+    color: #0d0e15;
+    box-shadow: 0 0 25px var(--neon-magenta);
+}
+.arcade-playstore-link .btn-sub { font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; color: #ffd966; margin-top: 2px; }
+
+.arcade-building-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 26, 26, 0.15);
+    border: 2px dashed var(--neon-red);
+    color: var(--neon-red);
+    padding: 12px 24px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-align: center;
+}
+.arcade-building-badge .btn-sub { font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; color: #ff9999; margin-top: 2px; }
 
 /* =========================================
    13. GALLERY LIGHTBOX SLIDESHOW SYSTEM
    ========================================= */
 #galleryLightboxContent { max-width: 80%; max-height: 80%; display: flex; align-items: center; justify-content: center; }
 
-/* FIX: FIXED THE NAV ARROWS STRAIGHT TO MID-LEFT & MID-RIGHT AT THE BOUNDING EDGES */
 .nav-arrow {
     position: absolute;
     top: 50%;
@@ -765,23 +934,21 @@ body::before {
     padding: 60px 40px;
 }
 
-
 /* ==========================================================================
    16. ADVANCED FLUID DYNAMIC RESPONSIVE BREAKPOINT SYSTEM (MOBILE ENGINE)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Navbar compression - Forces items into a clean top stack without clipping */
     .navbar {
         padding: 15px 10px;
         flex-direction: column;
         gap: 8px;
-        position: relative; /* Prevents navigation links from floating over your name */
+        position: relative;
         background: rgba(13, 14, 21, 0.95);
     }
     
     .logo {
-        font-size: 1.2rem; /* Shrunk down from 1.5rem so it fits cleanly on mobile headers */
-        letter-spacing: 2px;
+        font-size: 1.05rem; /* Formatted to keep Bloody Skulls Studio centered on one line */
+        letter-spacing: 1.5px;
         text-align: center;
     }
     
@@ -793,38 +960,37 @@ body::before {
     }
     
     .nav-links a {
-        font-size: 0.75rem; /* Compact layout link cards */
+        font-size: 0.75rem;
         letter-spacing: 1px;
     }
 
-    /* Hero Text fluid resizing - Tightens your name spacing on compact screens */
     .hero {
         height: auto;
-        padding: 80px 20px;
+        padding: 60px 20px 80px;
     }
 
     .hero h1 {
-        font-size: 2rem; /* Dynamically downscaled from 3.5rem to prevent ugly word-wrapping */
+        font-size: 1.85rem;
         letter-spacing: 1px;
         line-height: 1.3;
         margin-bottom: 12px;
     }
     
     .subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
         margin-bottom: 15px;
     }
     
     .tagline {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         margin-bottom: 25px;
         line-height: 1.5;
     }
 
-    /* Section Spacing Modifications */
     .projects-section {
         padding: 50px 15px;
         margin-bottom: 30px !important;
+        min-height: auto;
     }
     
     .neon-text-purple {
@@ -832,7 +998,6 @@ body::before {
         margin-bottom: 25px;
     }
 
-    /* About Container Layout collapse into single stack column */
     .about-container {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -847,21 +1012,19 @@ body::before {
         font-size: 1.05rem;
     }
 
-    /* Card Grid restructure to auto-scale on phone displays */
     .project-grid {
         grid-template-columns: 1fr !important;
         gap: 20px;
     }
     
     .card-image-box {
-        height: 150px;
+        height: auto;
     }
     
     .card-content {
         padding: 15px;
     }
 
-    /* Achievements & Accolades restructure */
     .achievement-card {
         flex-direction: column;
         padding: 15px;
@@ -876,9 +1039,8 @@ body::before {
         margin: 0 auto;
     }
 
-    /* FIX: CONTACT HUB PORTAL CARDS - Stacks links vertically so none clip off-screen */
     .links-container {
-        grid-template-columns: 1fr !important; /* Forces 1 layout column block instead of horizontal row */
+        grid-template-columns: 1fr !important;
         gap: 15px;
         width: 100%;
     }
@@ -886,14 +1048,13 @@ body::before {
     .portal-link {
         padding: 15px;
         gap: 15px;
-        justify-content: flex-start; /* Keeps icons aligned neatly to the left side */
+        justify-content: flex-start;
     }
 
     .portal-user {
-        font-size: 0.9rem; /* Slightly smaller text to prevent long email clipping */
+        font-size: 0.88rem;
     }
 
-    /* Arcade Cabinet Configuration adjustments */
     .arcade-cabinet {
         width: 95%;
         padding: 20px;
@@ -911,11 +1072,12 @@ body::before {
         font-size: 1.4rem;
     }
     
-    .arcade-play-btn {
+    .arcade-play-btn,
+    .arcade-playstore-link,
+    .arcade-building-badge {
         width: 100%;
     }
 
-    /* Lightbox Slideshow Arrows Position Anchoring */
     .nav-arrow {
         padding: 10px 14px;
         font-size: 0.75rem;
