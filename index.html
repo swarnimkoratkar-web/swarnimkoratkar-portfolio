@@ -12,7 +12,7 @@
     <div id="cyber-grid-canvas"></div>
     
     <header class="navbar">
-        <div class="logo neon-text-cyan">SK GAMEDEVS</div>
+        <div class="logo neon-text-cyan">BLOODY SKULLS STUDIO</div>
         <nav class="nav-links">
             <a href="#about">ABOUT</a>           
             <a href="#projects">PROJECTS</a>
@@ -66,12 +66,13 @@
     </section>
 
     <section id="projects" class="projects-section" style="border-top: 1px solid rgba(255, 217, 102, 0.15); margin-bottom: 100px;">
-        <h2 class="neon-text-purple">🚀 COMPLETED PROJECTS</h2>
+        <h2 class="neon-text-purple">🚀 FEATURED PROJECTS</h2>
         <div class="project-grid">
             
+            <!-- PROJECT 1: PIRATE'S GAMBLE -->
             <div class="neon-card pirate-theme" onclick="openArcadePanel('pirate')" style="cursor: pointer;">
-                <div class="card-image-box">
-                     <img src="./pirate-cover.png" alt="Pirate's Gamble Gameplay Preview" class="project-card-img">
+                <div class="card-image-box ratio-pirates">
+                    <img src="./pirate-cover.png" alt="Pirate's Gamble Gameplay Preview" class="project-card-img">
                 </div>
                 <div class="card-content">
                     <h3>Pirate's Gamble</h3>
@@ -85,10 +86,11 @@
                 </div>
             </div>
 
+            <!-- PROJECT 2: CAVERNS -->
             <div class="neon-card cavern-theme" onclick="openArcadePanel('caverns')" style="cursor: pointer;">
-                <div class="card-image-box">
-                    <img src="./caverns-cover.jpeg" alt="CAVERNS Gameplay Preview" class="project-card-img">
-                </div> 
+                <div class="card-image-box ratio-caverns">
+                     <img src="./caverns-cover.png" alt="NEON CAVERNS Gameplay Preview" class="project-card-img">
+                </div>
                 <div class="card-content">
                     <h3>CAVERNS</h3>
                     <p class="engine-tag neon-tag-cyan">UNITY / C# / ADS MONETIZATION</p>
@@ -101,6 +103,41 @@
                 </div>
             </div>
 
+            <!-- PROJECT 3: META CHAMELEON -->
+            <div class="neon-card chameleon-theme" onclick="openArcadePanel('chameleon')" style="cursor: pointer;">
+                <div class="card-image-box ratio-meta">
+                     <img src="./chameleon-cover.png" alt="Meta Chameleon Gameplay Preview" class="project-card-img" onerror="this.src='./caverns-cover.jpeg'">
+                </div> 
+                <div class="card-content">
+                    <h3>Meta Chameleon</h3>
+                    <p class="engine-tag neon-tag-magenta">UNITY 6 / NETCODE MULTIPLAYER / ANDROID / LEVELPLAY</p>
+                    <p>
+                        Fast-paced 3D multiplayer hide & seek game featuring public matchmaking lobbies, dynamic camouflage surface shaders, texture atlasing with minimal draw calls, and two distinct maps.
+                    </p>
+                    <div style="margin-top: 15px; font-size: 0.85rem; color: var(--neon-magenta); font-weight: bold; letter-spacing: 1px; text-shadow: 0 0 8px rgba(255, 0, 127, 0.3);">
+                        ✦ FEATURED: GOOGLE PLAY LIVE & LEVELPLAY MEDIATION
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 4: REBIRTH OF BHOLA -->
+            <div class="neon-card bhola-theme" onclick="openArcadePanel('bhola')" style="cursor: pointer;">
+                <div class="card-image-box ratio-bhola">
+                    <img src="./bhola-cover.png" alt="Rebirth of Bhola Preview" class="project-card-img" onerror="this.src='./pirate-cover.png'">
+                    <div class="status-overlay-badge">IN BUILDING</div>
+                </div> 
+                <div class="card-content">
+                    <h3>Rebirth of Bhola</h3>
+                    <p class="engine-tag neon-tag-red">UNITY / C# / HORROR NARRATIVE / 3D</p>
+                    <p>
+                        A dark, atmospheric story-driven 3D horror experience currently in active development. Built around tense exploration, occult mystery, environmental puzzles, and psychological horror narrative pacing.
+                    </p>
+                    <div style="margin-top: 15px; font-size: 0.85rem; color: var(--neon-red); font-weight: bold; letter-spacing: 1px; text-shadow: 0 0 8px rgba(255, 26, 26, 0.4);">
+                        ✦ STATUS: IN ACTIVE PRODUCTION / STORY MODE
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </section>
 
@@ -114,7 +151,7 @@
                     <div class="skill-badge cyan-glow">C# <span class="level">Intermediate</span></div>
                     <div class="skill-badge cyan-glow">C <span class="level">Intermediate</span></div>
                     <div class="skill-badge cyan-glow">SQL / DBMS <span class="level">Beginner</span></div>
-                    <div class="skill-badge cyan-glow">Optimization</div>
+                    <div class="skill-badge cyan-glow">Optimization <span class="level">Intermediate</span></div>
                 </div>
             </div>
 
@@ -123,6 +160,7 @@
                 <div class="badge-grid">
                     <div class="skill-badge orange-glow">Game Design</div>
                     <div class="skill-badge orange-glow">Level Design</div>
+                    <div class="skill-badge orange-glow">Environment Designing</div>
                     <div class="skill-badge orange-glow">UI / UX Design</div>
                     <div class="skill-badge orange-glow">Game Programming <span class="level">Intermediate</span></div>
                     <div class="skill-badge orange-glow">Blender <span class="level">Beginner</span></div>
@@ -168,45 +206,47 @@
                     <span class="portal-user">swarnimkoratkar@gmail.com</span>
                 </div>
             </a>
-            <a href="https://instagram.com/swarnimkoratkar" target="_blank" class="portal-link magenta-glow-link">
+            <a href="https://instagram.com/swarnimkoratkar" target="_blank" rel="noopener noreferrer" class="portal-link magenta-glow-link">
                 <div class="portal-icon">📸</div>
                 <div class="portal-info">
                     <span class="portal-title">INSTAGRAM</span>
                     <span class="portal-user">@swarnimkoratkar</span>
                 </div>
             </a>
-            <a href="https://github.com" target="_blank" class="portal-link cyan-glow-link">
-                <div class="portal-icon">💻</div>
+            <a href="https://www.linkedin.com/in/swarnim-koratkar-091697433?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="portal-link cyan-glow-link">
+                <div class="portal-icon">🔗</div>
                 <div class="portal-info">
-                    <span class="portal-title">CODE MATRIX</span>
-                    <span class="portal-user">GITHUB PROFILE</span>
+                    <span class="portal-title">LINKEDIN</span>
+                    <span class="portal-user">Swarnim Koratkar</span>
                 </div>
             </a>
         </div>
     </section>
 
+    <!-- DYNAMIC THEMED ARCADE MODAL POPUP -->
     <div id="arcadePanel" class="arcade-overlay" onclick="closeArcadePanel(event)">
-        <div class="arcade-cabinet">
+        <div class="arcade-cabinet" id="arcadeCabinet">
             <button class="arcade-close" onclick="document.getElementById('arcadePanel').classList.remove('active')">✕ CLOSE</button>
             <div class="arcade-header">
                 <div>
                     <h2 id="arcadeTitle">GAME TITLE</h2>
                     <p id="arcadeEngine" class="engine-tag">ENGINE / SPEC</p>
                 </div>
-                <button class="arcade-play-btn" disabled>LAUNCH WEB PLAY <span class="btn-sub">COMING SOON</span></button>
+                <div id="arcadeActionContainer"></div>
             </div>
-            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+            <hr class="arcade-divider">
             <div class="arcade-body">
-                <h4 class="neon-tag-cyan">➔ MISSION INTELLIGENCE</h4>
+                <h4 id="arcadeIntelTag">➔ MISSION INTELLIGENCE</h4>
                 <p id="arcadeDesc">Extended gameplay metrics go here.</p>
             </div>
             <div class="arcade-gallery-section">
-                <h4 class="neon-tag-orange">➔ VISUAL DEPLOYMENT FILES (CLICK TO ZOOM)</h4>
+                <h4 id="arcadeVisualTag">➔ VISUAL DEPLOYMENT FILES (CLICK TO ZOOM)</h4>
                 <div class="playstore-gallery"></div>
             </div>
         </div>
     </div>
 
+    <!-- GALLERY LIGHTBOX -->
     <div id="galleryLightbox" class="cert-lightbox" onclick="closeGalleryLightbox(event)">
         <button class="nav-arrow prev-arrow" onclick="changeSlide(-1)">◀ PREV</button>
         <div id="galleryLightboxContent"></div>
